@@ -1,0 +1,21 @@
+<h1>打刻</h1>
+<% if @timecard.status == 0 %>
+  <h2><%="出勤前"%></h2>
+  <%= button_to '出勤', {controller: 'timecards', action: 'create'}, {method: :post }%>
+<% elsif @timecard.status == 1 %>
+  <h2><%="出勤中"%></h2>
+  <%= form_with model: @timecard do |form| %>
+    <%= form.hidden_field :status, :value => 3%>
+    <%= form.submit "退勤"%>
+  <% end %>
+  <%= form_with model: @timecard do |form| %>
+    <%= form.hidden_field :status, :value => 2%>
+    <%= form.submit "休憩開始"%>
+  <% end %>
+<% elsif @timecard.status == 2 %>
+  <h2><%="休憩中"%></h2>
+  <%= form_with model: @timecard do |form| %>
+    <%= form.hidden_field :status, :value => 1%>
+    <%= form.submit "休憩終了"%>
+  <% end %>
+<% end %>

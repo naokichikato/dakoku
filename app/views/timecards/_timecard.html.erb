@@ -1,0 +1,16 @@
+<tr>
+  <td><%= timecard.work_begin.strftime('%Y年%m月%d日') %></td>
+  <td><%= week(timecard.work_begin.strftime('%w').to_i) %></td>
+  <td><%= timecard.work_begin.strftime('%H:%M') %></td>
+  <% if timecard.status == 3 %>
+    <td><%= timecard.work_finish.strftime('%H:%M') %></td> 
+    <td><%= change(timecard.rest_time) %></td>
+    <td><%= change(timecard.work_time) %></td>
+    <td><%= change(timecard.overtime) %></td>
+  <% else %>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  <% end %>
+</tr>

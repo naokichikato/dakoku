@@ -1,0 +1,23 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "打刻アプリ", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>        
+          <li><%= link_to "ホーム", root_path %></li>
+          <li><%= link_to "出退勤表", current_user %></li>
+          <li><%= link_to "申請", "/users/#{current_user.id}/peper" %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to "申請管理", pepers_path %></li>
+          <% end %>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
+          <li><%= link_to "設定", edit_user_path(current_user) %></li>
+          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+          <li><%= link_to "新規登録", signup_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

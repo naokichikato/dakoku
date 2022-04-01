@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  work_begin: 2022-03-19 18:51:54
+  work_finish: 2022-03-19 18:51:54
+  rest_begin: 2022-03-19 18:51:54
+  rest_finish: 2022-03-19 18:51:54
+  work_time: 1
+  rest_time: 1
+  user: one
+
+two:
+  work_begin: 2022-03-19 18:51:54
+  work_finish: 2022-03-19 18:51:54
+  rest_begin: 2022-03-19 18:51:54
+  rest_finish: 2022-03-19 18:51:54
+  work_time: 1
+  rest_time: 1
+  user: two

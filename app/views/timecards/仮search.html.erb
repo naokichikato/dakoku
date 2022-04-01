@@ -1,0 +1,7 @@
+<h2>検索</h2>
+
+
+<%= form_with model: @user, local: true do |form| %>
+  <%= form.check_box :send_welcome_email %> 
+  <%= form.submit %>
+<% end %>

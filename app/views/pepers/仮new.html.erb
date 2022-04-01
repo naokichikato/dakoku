@@ -1,0 +1,11 @@
+<% provide(:title, "申請") %>
+<body>
+  <div class="peper">
+    <%= form_with url:pepers_create_path, method: :get, local: true do |f| %>
+      <div><%= f.select :kind, {'休暇': '休暇', '育児休業': '育児休業'} %></div>       
+      <div><%= f.submit "申請" %></div>
+    <% end %>
+  </div>
+  <div>
+</body>
+ 

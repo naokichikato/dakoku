@@ -1,0 +1,22 @@
+<li>
+  <% if current_user.admin? %>
+    <%= link_to user.name, user %>
+    <% else %>
+    <%= user.name %>
+  <% end %>
+  
+  <% today = user.timecards.find_by(work_begin:Time.now.in_time_zone.all_day)%>
+  <% if today %>
+    <% if today.status == 3%>
+      <span class = "green"><%= "  退勤" %></span>
+    <% else %>
+      <span class = "orange"><%= "  出勤中" %></span>
+    <% end %>  
+  <% else %>
+    <span class = "red"><%= "  出勤前" %></span>
+  <% end %>  
+
+  <% if current_user.admin? %>
+    <%= link_to "delete", user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  <% end %>
+</li>

@@ -1,4 +1,4 @@
-require 'test_helper'
+git push -u origin mainrequire 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # test "the truth" do

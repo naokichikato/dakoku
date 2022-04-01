@@ -8,8 +8,8 @@
 # メインのサンプルユーザーを1人作成する
 require 'date'
 
-User.create!(name:  "Example User",
-  email: "aaa@railstutorial.org",
+User.create!(name:  "管理者",
+  email: "admin@gmail.com",
   password:              "aaaaaa",
   password_confirmation: "aaaaaa",
   admin: true)
